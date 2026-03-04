@@ -24,9 +24,10 @@ function start() {
     $('body').attr('class', 'board');
     scale($('#board'), $('#space'));
     
-    // 全部 4 个都是 AI
-    const players = [];
-    for (let i = 0; i < 4; i++) {
+    // 玩家 0：人类玩家（带 UI）
+    // 玩家 1-3：AI 电脑
+    let players = [ new Majiang.UI.Player($('#board'), pai, audio) ];
+    for (let i = 1; i < 4; i++) {
         players[i] = new Majiang.AI();
     }
     
@@ -39,7 +40,9 @@ function start() {
     window.sichuanGame = new Majiang.Game(players, end, rule);
     window.sichuanGame.view = new Majiang.UI.Board($('#board .board'), pai, audio, window.sichuanGame.model);
     
-    // 不创建 GameCtl（不需要人类玩家控制）
+    // 创建 GameCtl 支持人类玩家操作
+    new Majiang.UI.GameCtl($('#board'), 'Majiang.pref', window.sichuanGame, window.sichuanGame._view);
+    
     window.sichuanGame.kaiju();
 }
 
