@@ -1,0 +1,40 @@
+- var page = 'sichuan'
+doctype html
+html(lang="zh-CN")
+  
+  head
+    include ../inc/meta
+
+    include ../inc/ogp
+    +ogp('四川麻将血战到底', '四川麻将血战到底 - 换三张、定缺、血战到底')
+
+    include ../inc/style
+    include ../inc/script
+  
+  body.file
+    include ../inc/loaderr
+    include ../inc/navi
+    include ../inc/loaddata
+
+    #sichuan-file
+      h1
+        img(src="img/logo.png" alt="四川麻将")
+        |  血战到底
+      .version ver. #{version}
+      
+      .start
+        a.start-btn 开始游戏
+      
+      .rule-info
+        h2 游戏规则
+        ul
+          li 仅用筒、条、万 108 张
+          li 开局换三张、定缺
+          li 血战到底：胡牌者离场，剩余玩家继续
+          li 一炮多响
+          li 刮风下雨（杠牌即时结算）
+          li 流局查花猪、查大叫
+
+    include ../inc/stat
+    include ../inc/board
+    .version ver. #{version}

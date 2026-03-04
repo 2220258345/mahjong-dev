@@ -15,6 +15,7 @@ module.exports = {
         drill:     './src/js/drill.js',
         dapai:     './src/js/dapai.js',
         paiga:     './src/js/paiga.js',
+        sichuan:   './src/js/sichuan.js',
     },
     output: {
         path:     __dirname + '/dist/js/',

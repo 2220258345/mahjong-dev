@@ -12,3 +12,6 @@ global.Majiang.UI = require('@kobalab/majiang-ui');
 global.Majiang.VERSION = '2.5.0';
 global.jQuery  = require('jquery');
 global.$ = jQuery;
+
+// 四川麻将血战到底
+require('./sichuan-game');
