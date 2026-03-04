@@ -38,20 +38,22 @@ function start() {
     $('body').attr('class', 'board');
     scale($('#board'), $('#space'));
     
-    // 创建玩家（4 个 AI 或 1 人 +3AI）
-    const players = [ new Majiang.UI.Player($('#board'), pai, audio) ];
-    for (let i = 1; i < 4; i++) {
+    // 创建玩家（4 个 AI）
+    const players = [];
+    for (let i = 0; i < 4; i++) {
         players[i] = new Majiang.AI();
     }
     
     // 创建四川麻将游戏
     game = new Majiang.SichuanGame(players, end, {});
-    game.view = new Majiang.UI.Board($('#board .board'), pai, audio, game.model);
     
-    // 创建控制器
-    new Majiang.UI.GameCtl($('#board'), 'Majiang.pref', game, game._view);
+    // 设置视图
+    if ($('#board .board').length > 0) {
+        game.view = new Majiang.UI.Board($('#board .board'), pai, audio, game.model);
+        game._view = game.view;
+    }
     
-    // 开始游戏
+    // 开始游戏（不使用 GameCtl 避免错误）
     game.kaiju();
 }
 

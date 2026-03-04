@@ -52,6 +52,8 @@ class SichuanGame {
             qijia: 0
         };
         
+        this._view = null; // 初始化 _view
+        
         this._players.forEach((player, i) => {
             player.kaiju({
                 id: i,
@@ -62,7 +64,10 @@ class SichuanGame {
             });
         });
         
-        this._view?.open();
+        if (this._view && this._view.open) {
+            this._view.open();
+        }
+        
         this._qipai();
     }
     
@@ -185,6 +190,9 @@ class SichuanGame {
                 baopai: shan.baopai[0],
                 shoupai: shoupai
             });
+            
+            // 设置 player.shoupai 供 AI 使用
+            player.shoupai = new Majiang.Shoupai(qipai[i]);
         });
         
         this._shan = shan;
@@ -218,7 +226,18 @@ class SichuanGame {
         }
         
         const player = this._players[this._lunban];
+        
+        // 设置玩家的 model 和 shan 供 AI 使用
+        player.model = this._model;
+        player.model.lunban = this._lunban;
+        player.shan = this._shan;
+        
         const p = this._shan.zimo();
+        
+        // 更新玩家手牌
+        if (player.shoupai) {
+            player.shoupai.zimo(p);
+        }
         
         if (player.select_hule && player.select_hule({ l: this._lunban, p })) {
             this._zimo_hule(this._lunban, p);
