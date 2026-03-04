@@ -6,7 +6,7 @@ html(lang="ja")
     include ../inc/meta
 
     include ../inc/ogp
-    +ogp('電脳麻将: 和了点計算', '麻雀点数計算アプリ')
+    +ogp('电脑麻将: 和了点数计算', '麻雀点数计算应用')
 
     include ../inc/style
     include ../inc/script
@@ -21,33 +21,33 @@ html(lang="ja")
     form
       div 牌姿:
         input(name="paistr" type="text")
-        input(type="submit" value="決定")
-        input(type="reset" value="クリア")
+        input(type="submit" value="确定")
+        input(type="reset" value="清除")
       div
         span.
           ドラ表示牌:
           <input name="baopai" type="text"><input name="baopai" type="text"><input name="baopai" type="text"><input name="baopai" type="text"><input name="baopai" type="text">
         span.hide.
-          裏ドラ表示牌:
+          里ドラ表示牌:
           <input name="fubaopai" type="text"><input name="fubaopai" type="text"><input name="fubaopai" type="text"><input name="fubaopai" type="text"><input name="fubaopai" type="text">
       div
         span
           label
             input(name="zimo" type="radio" value="1")
-            | ツモ
+            | 自摸
           label
             input(name="zimo" type="radio" value="0" checked)
-            | ロン
+            | 荣和
         span
-          |  場風: 
+          |  场风: 
           select(name="zhuangfeng")
-            option(value="0" selected) 東
+            option(value="0" selected) 东
             option(value="1") 南
             option(value="2") 西
             option(value="3") 北
-          |  自風: 
+          |  自风: 
           select(name="menfeng")
-            option(value="0") 東
+            option(value="0") 东
             option(value="1" selected) 南
             option(value="2") 西
             option(value="3") 北
@@ -58,28 +58,28 @@ html(lang="ja")
             | 立直
           label
             input(name="lizhi" type="checkbox" value="2")
-            | ダブル立直
+            | 双倍立直
         span
           label
             input(name="yifa" type="checkbox" value="1" disabled)
-            | 一発
+            | 一发
         span
           label
             input(name="haidi" type="checkbox" value="1")
             | 海底
           label
             input(name="lingshang" type="checkbox" value="1")
-            | 嶺上
+            | 岭上
           label
             input(name="qianggang" type="checkbox" value="1")
-            | 槍槓
+            | 枪杠
         span
           label
             input(name="tianhu" type="checkbox" value="2")
             span 地和
-      div ルール:
+      div 规则:
         select(name="rule")
-          option(value="") 電脳麻将ルール
+          option(value="") 电脑麻将规则
     hr
     
     .hule-dialog

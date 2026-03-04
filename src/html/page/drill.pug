@@ -6,7 +6,7 @@ html(lang="ja")
     include ../inc/meta
 
     include ../inc/ogp
-    +ogp('電脳麻将: 点数計算ドリル', '点数計算を練習しましょう')
+    +ogp('电脑麻将: 点数計算练习', '来练习点数计算吧')
 
     include ../inc/style
     include ../inc/script
@@ -18,9 +18,9 @@ html(lang="ja")
     include ../inc/resize
     .version ver. #{version}
 
-    div ルール:
+    div 规则:
       select(name="rule")
-        option(value="") 電脳麻将ルール
+        option(value="") 电脑麻将规则
     hr
 
     .drill.hide
@@ -30,7 +30,7 @@ html(lang="ja")
         | 場 
         span.menfeng
         | 家 
-        img.lizhi.hide(src="img/1000.gif" alt="リーチ")
+        img.lizhi.hide(src="img/1000.gif" alt="立直")
 
         .shan.baopai
           span.baopai

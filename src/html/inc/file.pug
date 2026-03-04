@@ -1,51 +1,51 @@
 #file
   h1
-    img(src="img/logo.png" alt="電脳麻将")
+    img(src="img/logo.png" alt="电脑麻将")
     if page == 'paipu'
-      |  牌譜ビューア
+      |  牌谱 viewer
     if page == 'netplay'
-      |  ネット対戦
+      |  网络对战
   .version ver. #{version}
   
   .file.hide
 
     if page == 'index'
-      a.start 対局開始
+      a.start 开始对局
     if page == 'netplay'
       .error.hide
       .netplay
         img(src="img/icon.png" title="guest")
         span.name
         form.room
-          input(name="room_no" placeholder="ルーム")
-          input(type="submit" value="入室")
+          input(name="room_no" placeholder="房间号")
+          input(type="submit" value="进入房间")
         form.room
-          input(type="submit" value="ルーム作成")
+          input(type="submit" value="创建房间")
         form.logout(method="POST" action="server/logout")
-          input(type="submit" value="ログアウト")
+          input(type="submit" value="退出登录")
 
     if page == 'index' || page == 'netplay'
       .button
         a.stat
           img(src="img/icon-dotlist.png")
-          | 牌譜集計
+          | 牌谱统计
         |
         |
         a.download
           img(src="img/icon-download-alt.png")
-          | 牌譜保存
+          | 保存牌谱
 
     .list
       .row
         .button
           a.replay
             img(src="img/icon-play.png")
-            | 再生
+            | 播放
           |
           |
           a.edit
             img(src="img/icon-edit.png")
-            | 編集
+            | 编辑
           |
           |
           a.download
@@ -55,7 +55,7 @@
           |
           a.delete
             img(src="img/icon-trash.png")
-            | 削除
+            | 删除
           |
           |
           if page == 'paipu'
@@ -68,28 +68,28 @@
     if page == 'paipu'
       .error.hide
       .loading.hide
-        .blink 牌譜取得中......
+        .blink 正在获取牌谱......
       label.upload
         img(src="img/icon-upload-alt.png")
-        | 牌譜追加
+        | 添加牌谱
         input(type="file" multiple)
       label.storage
         input(name="storage" type="checkbox")
-        | ローカルストレージ
+        | 本地存储
       .button
         a.stat
           img(src="img/icon-dotlist.png")
-          | 牌譜集計
+          | 牌谱统计
         |
         |
         a.edit
           img(src="img/icon-edit.png")
-          | 牌譜作成
+          | 创建牌谱
         |
         |
         a.download
           img(src="img/icon-download-alt.png")
-          | 牌譜保存
+          | 保存牌谱
       form.tenhou.hide
-        input(name="url" placeholder="天鳳 牌譜ID/URL")
-        input(type="image" src="img/icon-squaresearch.png" alt="検索" align="top")
+        input(name="url" placeholder="天凤 牌谱 ID/URL")
+        input(type="image" src="img/icon-squaresearch.png" alt="搜索" align="top")

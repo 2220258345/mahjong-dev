@@ -6,7 +6,7 @@ html(lang="ja")
     include ../inc/meta
 
     include ../inc/ogp
-    +ogp('電脳麻将: 何切る解答機', '電脳麻将のAIが何切る問題に解答します')
+    +ogp('电脑麻将: 何切る解答機', '电脑麻将的AIが何切る问题に解答します')
 
     include ../inc/style
     include ../inc/script
@@ -24,19 +24,19 @@ html(lang="ja")
       form
         div 牌姿:
           input(name="paistr" type="text")
-          input(type="submit" value="決定")
-          input(type="reset" value="クリア")
+          input(type="submit" value="确定")
+          input(type="reset" value="清除")
         div
           span
-            |  場風: 
+            |  场风: 
             select(name="zhuangfeng")
-              option(value="0" selected) 東
+              option(value="0" selected) 东
               option(value="1") 南
               option(value="2") 西
               option(value="3") 北
-            |  自風: 
+            |  自风: 
             select(name="menfeng")
-              option(value="0") 東
+              option(value="0") 东
               option(value="1" selected) 南
               option(value="2") 西
               option(value="3") 北
@@ -54,13 +54,13 @@ html(lang="ja")
           span
             label
               input(name="hongpai" type="checkbox" checked)
-              |  赤牌あり
+              |  有赤牌
         div
           label
             input(name="heinfo"  type="checkbox")
-            |  捨て牌/副露面子
+            |  舍牌/副露面子
         div.heinfo
-          each player in [ '私','下家','対面','上家' ]
+          each player in [ '我','下家','对家','上家' ]
             div
               span #{player}: 
               input(name="hestr" type="text")
